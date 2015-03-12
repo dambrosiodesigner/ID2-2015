@@ -23,7 +23,7 @@ Nell'arco del semestre saranno stimolate discussioni su progetti rilevanti nei t
 
 Esame orale: analisi e presentazione dei progetti e delle schede di lettura critica, discussione sui testi in bibliografia essenziale
 
-## bibliografia
+## bibliografia 
 
 **_essenziale_**
 
