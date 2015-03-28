@@ -27,6 +27,11 @@ void setup() {
   println (A_title);  println (A_values);  // < column A, integers, ages
   println (B_title);  println (B_values);  // < column B, strings, names
   
+  
+  // Giuseppe
+  table(A_title, B_title, A_values, B_values);
+  drawTable(A_title, B_title, A_values, B_values);
+  
   } 
 
 
@@ -35,6 +40,53 @@ void draw() {
   // do things with your data
   
 }
+
+
+
+
+// function by Giuseppe
+// writing and return a table 
+// saves the table in the folder data with a csv format
+
+Table table;
+
+Table table (String Acol, String Bcol, IntList A, StringList B) {
+
+  table = new Table();  // create a table
+
+    // add new column and insert the name 
+  table.addColumn(Acol);
+  table.addColumn(Bcol);
+
+  for (int i = 0; i < A.size (); i++) {
+    TableRow newRow = table.addRow();  // add a row
+    newRow.setInt(Acol, A.get(i));     // insert value in a Acol
+    newRow.setString(Bcol, B.get(i));  // insert value in Bcol
+  }
+
+  saveTable(table, "data/table.csv");
+
+  return table;
+}
+
+
+// Draw a simple table in the sketch
+void drawTable (String Acol, String Bcol, IntList A, StringList B) {
+  int distance = 0;
+  fill(0);
+  text(Acol, 0, 10);
+  text(Bcol, 30, 10 );
+  line (0, 14, 100, 14);
+  for (int i =0; i < A.size (); i++ ) {
+    distance += 11;
+    text(A.get(i), 0, 15+i+distance );
+    text(B.get(i), 30, 15+i+distance );
+  }
+}
+
+
+
+
 
 
 void load_G_Spreadsheet(String url) {
